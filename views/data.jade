@@ -19,7 +19,8 @@ block content
             ul.nav.nav-list
               li.nav-header Opciones
               each d in data
-                li.btn-link #{d.name}
+                li.btn-link 
+                    a(href="/details/#{d.name}") #{d.name} 
                      
         .span9
           .hero-unit
@@ -41,7 +42,7 @@ block content
 
 
       
-      footer
+    footer
         p &copy; Company 2013
 
     script(src='../assets/js/jquery.js')
