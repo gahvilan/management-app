@@ -1,10 +1,59 @@
 extends layout
 
 block content
-  #wrapper
-    #h1
-        title #{title}
-        p= title
-    #display
-        p= data.int_basica.name
-        
+  .navbar.navbar-inverse.navbar-fixed-top
+      .navbar-inner
+        .container-fluid
+          button.btn.btn-navbar(type='button', data-toggle='collapse', data-target='.nav-collapse')
+            span.icon-bar
+              
+          a.brand(href='#') El Enano
+              
+          .nav-collapse.collapse
+            p.navbar-text.pull-right
+
+    .container-fluid
+      .row-fluid
+        .span3
+          .well.sidebar-nav
+            ul.nav.nav-list
+              li.nav-header Opciones
+              each d in data
+                li.btn-link #{d.name}
+                     
+        .span9
+          .hero-unit
+            h2 Ambinte de Trabajo
+                  
+            p Lugar seguro con buena luminosidad y ventilacion
+            p Lugar seguro con baja luminosidad o ventilacion
+            p Lugar con baja luminosidad y ventilacion 
+            p Lugar con mala luminosidad y ventilacion
+
+        .span9
+          .hero-unit
+            h2 Riesgos
+                  
+            p En el puesto de trabajo no peligra la salud fisica o mental del trabajador
+            p Las tareas del puesto de trabajo pueden ocasionar daños fisicos superficiales o cansancio mental
+            p Las tareas del puesto pueden ocasionar daños fisicos o mentales que requieren atencion medica especializada pero sin necesidad de Lic. medicas extensivas 
+            p Las tareas del puesto implica que el ocupante del mismo este expuesto a riesgos que producen daños fisicos o mentales   que produzcan Lic.  Extensivas
+
+
+      
+      footer
+        p &copy; Company 2013
+
+    script(src='../assets/js/jquery.js')
+    script(src='../assets/js/bootstrap-transition.js')
+    script(src='../assets/js/bootstrap-alert.js')
+    script(src='../assets/js/bootstrap-modal.js')
+    script(src='../assets/js/bootstrap-dropdown.js')
+    script(src='../assets/js/bootstrap-scrollspy.js')
+    script(src='../assets/js/bootstrap-tab.js')
+    script(src='../assets/js/bootstrap-tooltip.js')
+    script(src='../assets/js/bootstrap-popover.js')
+    script(src='../assets/js/bootstrap-button.js')
+    script(src='../assets/js/bootstrap-collapse.js')
+    script(src='../assets/js/bootstrap-carousel.js')
+    script(src='../assets/js/bootstrap-typeahead.js')

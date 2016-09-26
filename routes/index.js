@@ -13,7 +13,7 @@ router.get('/data', function(req, res) {
     var collection = db.get('schema_info');
     collection.find({},{},function(e,data){
         res.render('data', {
-            "data" : data[0]
+            "data" : data
         });
     });
 });
