@@ -29,22 +29,11 @@ block content
                         each d in data.data
                             tr
                                td #{d.name}
-                               td #{d.values[0]} 
-                               td #{d.values[1]} 
-                               td #{d.values[2]} 
-    footer    
-        p &copy; Company 2013
+                               td 
+                                   input(type='text', id='ponderacion_#{d.id}', value='#{d.values[0]}', onkeyup = "document.getElementById('result_#{d.id}').value = document.getElementById('ponderacion_#{d.id}').value*document.getElementById('grado_#{d.id}').value") 
+                               td 
+                                   input(type='text', id='grado_#{d.id}', value='#{d.values[1]}', onkeyup = "document.getElementById('result_#{d.id}').value = document.getElementById('ponderacion_#{d.id}').value*document.getElementById('grado_#{d.id}').value") 
+                               td
+                                   input(type='text', id='result_#{d.id}', value='#{(d.values[0]*d.values[1])}') 
 
-    script(src='../assets/js/jquery.js')
-    script(src='../assets/js/bootstrap-transition.js')
-    script(src='../assets/js/bootstrap-alert.js')
-    script(src='../assets/js/bootstrap-modal.js')
-    script(src='../assets/js/bootstrap-dropdown.js')
-    script(src='../assets/js/bootstrap-scrollspy.js')
-    script(src='../assets/js/bootstrap-tab.js')
-    script(src='../assets/js/bootstrap-tooltip.js')
-    script(src='../assets/js/bootstrap-popover.js')
-    script(src='../assets/js/bootstrap-button.js')
-    script(src='../assets/js/bootstrap-collapse.js')
-    script(src='../assets/js/bootstrap-carousel.js')
-    script(src='../assets/js/bootstrap-typeahead.js')
+    p &copy; gahvilan #{new Date().getFullYear()}
