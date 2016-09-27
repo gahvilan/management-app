@@ -17,8 +17,10 @@ block content
         .span9
           .hero-unit
             h2 #{data.name}
-            div.col-md-6
-                table.table.table-striped
+            div.col-md-2
+              form(name="add-estimation", method="post", action="/details/#{data.name}")
+                div.col-md-2.table-responsive
+                  table.table.table-striped
                     thead
                         tr
                             td Nombre
@@ -30,10 +32,11 @@ block content
                             tr
                                td #{d.name}
                                td 
-                                   input(type='text', id='ponderacion_#{d.id}', value='#{d.values[0]}', onkeyup = "document.getElementById('result_#{d.id}').value = document.getElementById('ponderacion_#{d.id}').value*document.getElementById('grado_#{d.id}').value") 
+                                   input(type='text', id='ponderacion_#{d.id}', name='ponderacion_#{d.id}', value='#{d.values[0]}', onkeyup = "document.getElementById('result_#{d.id}').value = document.getElementById('ponderacion_#{d.id}').value*document.getElementById('grado_#{d.id}').value") 
                                td 
-                                   input(type='text', id='grado_#{d.id}', value='#{d.values[1]}', onkeyup = "document.getElementById('result_#{d.id}').value = document.getElementById('ponderacion_#{d.id}').value*document.getElementById('grado_#{d.id}').value") 
+                                   input(type='text', id='grado_#{d.id}', name='grado_#{d.id}',value='#{d.values[1]}', onkeyup = "document.getElementById('result_#{d.id}').value = document.getElementById('ponderacion_#{d.id}').value*document.getElementById('grado_#{d.id}').value") 
                                td
-                                   input(type='text', id='result_#{d.id}', value='#{(d.values[0]*d.values[1])}') 
+                                   input(type='text', name='result_#{d.id}', id='result_#{d.id}', value='#{(d.values[0]*d.values[1])}') 
+                input(type='submit',value='Save Data',data-transition='fade', data-theme='c')                       
 
     p &copy; gahvilan #{new Date().getFullYear()}
